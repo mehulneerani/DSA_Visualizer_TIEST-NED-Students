@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DSA Visualizer: real-life stories</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Nunito:wght@500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="logo">DS</div>
+  <div><h1>DSA Visualizer </h1></div>
+</header>
+<div id="srv" class="srv" hidden role="alert"></div>
+<nav class="menu" id="menu" aria-label="Stories"></nav>
+<div class="layout">
+  <main class="page">
+    <section class="card intro-card">
+      <h2 id="stt"></h2>
+      <div class="used"><span class="badge" id="dsn"></span><span id="why"></span></div>
+      <p class="story" id="story"></p>
+      <div class="ctl"><button id="rs">Start over</button></div>
+    </section>
+    <div class="dashboard-grid">
+      <section class="card operations-card">
+        <h3>Operations</h3>
+        <label class="lb" id="szlabel" for="sz" style="margin-top:4px">1. How many can it hold?</label>
+        <div class="ctl"><input id="sz" type="number" min="1" max="10" inputmode="numeric" placeholder="1 to 10"><button id="setsz">Set size</button></div>
+        <p class="cap" id="szmsg" style="margin:8px 0 0"></p>
+        <label class="lb" for="val">2. Type a name</label>
+        <input id="val" type="text" placeholder="Type here" aria-label="Name">
+        <p class="hint" id="hint" hidden></p>
+        <div id="posrow" hidden>
+          <label class="lb" for="pos">Position (only for Add at position, 1 = front)</label>
+          <input id="pos" type="number" min="1" inputmode="numeric" placeholder="e.g. 2" aria-label="Position">
+        </div>
+        <label class="lb">3. Pick an operation (the last one you used glows)</label>
+        <div class="opsg" id="ops"></div>
+      </section>
+      <section class="card visualization-card">
+        <div class="head">
+          <svg id="mas" viewBox="0 0 80 80" role="img" aria-label="Mascot"><circle cx="40" cy="42" r="32" fill="var(--yellow)" stroke="var(--ink)" stroke-width="4"/><circle cx="29" cy="36" r="4" fill="#1B1F3B"/><circle cx="51" cy="36" r="4" fill="#1B1F3B"/><path id="mouth" d="M28 52 Q40 64 52 52" fill="none" stroke="#1B1F3B" stroke-width="4" stroke-linecap="round"/></svg>
+          <div class="bubble" id="say" aria-live="polite"></div>
+        </div>
+        <h3 id="vt"></h3>
+        <div id="stage"></div>
+        <div class="meta"><span class="pill" id="size"></span></div>
+      </section>
+      <section class="card real-life-card"><h3>In real life</h3><div id="scene" style="margin-top:12px"></div></section>
+    </div>
+  </main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
